@@ -1,0 +1,75 @@
+<view class='page'>
+<view class='page__hd'>
+  <view class='weui-search-bar'>
+    <view class='weui-search-bar__form'>
+      <view class='weui-search-bar__box'>
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索菜谱、食材"></input>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='page__bd'>
+<view class="weui-panel weui-panel_access">
+        <view class="weui-panel__hd">菜系分类</view>
+            <view class="weui-panel__bd">
+                <navigator url="/pages/dish-list/dish-list" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="sichuan.jpg" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">川菜</view>
+                        <view class="weui-media-box__desc">川菜即四川菜肴，是中国特色传统的四大菜系之一、中国八大菜系之一、中华料理集大成者。</view>
+                    </view>
+                </navigator>
+                <navigator url="/pages/dish-list/dish-list" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="guangdong.jpg" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">粤菜</view>
+                        <view class="weui-media-box__desc">粤菜即广东菜，是中国传统四大菜系、八大菜系之一，发源于岭南。</view>
+                    </view>
+                </navigator>
+            </view>
+            <view class="weui-panel__ft">
+                <view class="weui-cell weui-cell_access weui-cell_link">
+                    <view class="weui-cell__bd">查看更多</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                </view>
+            </view>
+        </view>
+</view>
+<view class="weui-panel weui-panel_access">
+        <view class="weui-panel__hd">时间分类</view>
+            <view class="weui-panel__bd">
+                <navigator url="/pages/dish-list/dish-list" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="mianbao.jpg" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">早餐</view>
+                        <view class="weui-media-box__desc">早餐又叫早点、过早、早饭，是指在早上享用的餐。</view>
+                    </view>
+                </navigator>
+                <navigator url="/pages/dish-list/dish-list" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="wucan.jpg" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">午餐</view>
+                        <view class="weui-media-box__desc">午餐是指大约在中午或者之后一段时间所用的一餐，一般集中在下午一点至两点。</view>
+                    </view>
+                </navigator>
+                <navigator url="/pages/dish-list/dish-list" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="wancan.jpg" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">晚餐</view>
+                        <view class="weui-media-box__desc">每天晚上吃的正餐笼统的讲叫做晚餐，健康晚餐很重要对我们的身体健康有一定的影响</view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+</view>
