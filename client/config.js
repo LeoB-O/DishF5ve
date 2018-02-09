@@ -2,8 +2,8 @@
  * 小程序配置文件
  */
 
-// 此处主机域名修改成腾讯云解决方案分配的域名
-var host = 'https://zqjzwuh4.qcloud.la';
+
+var host = 'https://www.example.cn'; //请修改为你的域名
 
 var config = {
 
@@ -21,7 +21,10 @@ var config = {
     tunnelUrl: `${host}/weapp/tunnel`,
 
     // 上传图片接口
-    uploadUrl: `${host}/weapp/upload`
+    uploadUrl: `${host}/weapp/upload`,
+
+    // 获取分类列表
+    getCatagoryList: `${host}/weapp/catagory`
   }
 };
 

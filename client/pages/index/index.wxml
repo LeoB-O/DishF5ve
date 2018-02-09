@@ -5,7 +5,7 @@
         <view class='weui-search-bar__box'>
           <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
           <input type="text" class="weui-search-bar__input" placeholder="搜索菜谱、食材"></input>
-          <image src='../image/camera.jpg' class='camera' bindtap='onCamera'></image>
+          <image src='http://xxx.leobob.cn/image/camera.jpg' class='camera' bindtap='onCamera'></image>
         </view>
       </view>
     </view>
@@ -14,15 +14,17 @@
     <view class="weui-panel weui-panel_access">
       <view class="weui-panel__hd">菜系分类</view>
       <view class="weui-panel__bd">
-        <navigator wx:for="{{dishCata}}" url="/pages/dish-list/dish-list?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <view wx:for="{{dishCata}}">
+        <navigator wx:if="{{item.id<3}}" url="/pages/dish-list/dish-list?from=index&type=dish&id={{item.id}}&cataName={{item.cataName}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
           <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-            <image class="weui-media-box__thumb" src="{{item.image}}" />
+            <image class="weui-media-box__thumb" src="{{item.imageUrl}}" />
           </view>
           <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
             <view class="weui-media-box__title">{{item.cataName}}</view>
             <view class="weui-media-box__desc">{{item.cataDetail}}</view>
           </view>
         </navigator>
+        </view>
       </view>
       <view class="weui-panel__ft">
         <view class="weui-cell weui-cell_access weui-cell_link" bindtap='onTap'>
@@ -35,15 +37,17 @@
   <view class="weui-panel weui-panel_access">
     <view class="weui-panel__hd">时间分类</view>
     <view class="weui-panel__bd">
-      <navigator wx:for="{{mealCata}}" url="/pages/dish-list/dish-list?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+    <view wx:for="{{dishCata}}">
+      <navigator wx:if="{{item.type=='时间'}}" url="/pages/dish-list/dish-list?from=index&type=dish&id={{item.id}}&cataName={{item.cataName}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
         <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-          <image class="weui-media-box__thumb" src="{{item.image}}" />
+          <image class="weui-media-box__thumb" src="{{item.imageUrl}}" />
         </view>
         <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
           <view class="weui-media-box__title">{{item.cataName}}</view>
           <view class="weui-media-box__desc">{{item.cataDetail}}</view>
         </view>
       </navigator>
+      </view>
     </view>
   </view>
 </view>

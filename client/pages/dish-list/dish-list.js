@@ -1,5 +1,5 @@
 // pages/dish-list.js
-var image = require('../image/image.js')
+var config = require('../../config.js')
 
 Page({
 
@@ -13,19 +13,7 @@ Page({
         id: 1,
         dishName: "川菜",
         dishDetail: "hahahahah",
-        image: image.sichuan
-      },
-      {
-        id: 2,
-        dishName: "粤菜",
-        dishDetail: "hahahahah",
-        image: image.guangdong
-      },
-      {
-        id: 3,
-        dishName: "湘菜",
-        dishDetail: "hahahaha",
-        image: ""
+        imageUrl: ''
       }
     ],
     listName: "分类"
@@ -35,52 +23,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    switch (options.id * 1) {
-      case 0:
+    switch (options.type) {
+      case 'catagory':
         this.setData({ listName: "菜系分类" });
+        wx.request({
+          url: config.service.getCatagoryList,
+          success: (res) => {
+            this.data.dishArray = res.data;
+            this.setData(this.data);
+          }
+        })
         break;
-      case 1:
-        this.data.dishArray[0].dishName = "火锅";
-        this.data.dishArray[1].dishName = "腊肠";
-        this.data.dishArray[2].dishName = "蛇皮怪";
-        this.data.listName = "川菜";
+      case 'dish':
+        this.data.listName = options.cataName;
         this.setData(this.data);
         break;
-      case 2:
-        this.data.dishArray[0].dishName = "火锅";
-        this.data.dishArray[1].dishName = "腊肠";
-        this.data.dishArray[2].dishName = "蛇皮怪";
-        this.data.listName = "粤菜";
-        this.setData(this.data);
-        break;
-      case 3:
-        this.data.dishArray[0].dishName = "火锅";
-        this.data.dishArray[1].dishName = "腊肠";
-        this.data.dishArray[2].dishName = "蛇皮怪";
-        this.data.listName = "湘菜";
-        this.setData(this.data);
-        break;
-      case 4:
-        this.data.dishArray[0].dishName = "火锅";
-        this.data.dishArray[1].dishName = "腊肠";
-        this.data.dishArray[2].dishName = "蛇皮怪";
-        this.data.listName = "早餐";
-        this.setData(this.data);
-        break;
-      case 5:
-        this.data.dishArray[0].dishName = "火锅";
-        this.data.dishArray[1].dishName = "腊肠";
-        this.data.dishArray[2].dishName = "蛇皮怪";
-        this.data.listName = "午餐";
-        this.setData(this.data);
-        break;
-      case 6:
-        this.data.dishArray[0].dishName = "火锅";
-        this.data.dishArray[1].dishName = "腊肠";
-        this.data.dishArray[2].dishName = "蛇皮怪";
-        this.data.listName = "晚餐";
-        this.setData(this.data);
-        break;
+      
     }
   },
 
