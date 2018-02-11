@@ -1,3 +1,5 @@
+var config=require('../../config.js')
+
 Page({
 
   /**
@@ -8,8 +10,8 @@ Page({
       {
       dishName:"火锅",
       details:"hh",
-      video:"http://www.w3school.com.cn//i/movie.mp4",
-      audio: { src: "http://qqma.tingge123.com:823/mp3/2015-06-13/1434188181.mp3", poster:"sichuan.jpg",name:"火锅",author:"Dishf5ve"}
+      video:"",
+      audio: { src: "", name:"火锅",author:"Dishf5ve"}
       }
     ],
     listName: "分类"
@@ -22,7 +24,7 @@ Page({
     switch (options.dishName) {
       case "川菜":
         wx.request({
-          url: 'https://www.leobob.cn/weapp/dishDetails',
+          url: config.service.getDishDetails,
           success: (res) => {
             console.log(res.data);
             this.data.dishArray = res.data[0];
