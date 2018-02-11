@@ -21,12 +21,12 @@ Page({
   onLoad: function (options) {
     switch (options.dishName) {
       case "川菜":
-        this.data.listName = "火锅";
         wx.request({
-          url: config.service.getDishDetails,
+          url: 'https://www.leobob.cn/weapp/dishDetails',
           success: (res) => {
             console.log(res.data);
             this.data.dishArray = res.data[0];
+            this.data.listName = "火锅";
             this.setData(this.data);
           }
         })

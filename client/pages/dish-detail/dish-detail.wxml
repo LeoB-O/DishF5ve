@@ -8,8 +8,8 @@
     <view class='weui-panel__bd'>
       <navigator  class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
         <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-          <video src="{{dishArray.video}}" binderror="videoErrorCallback" class="weui-media-box__desc"></video>
-          <audio class="weui-media-box__desc" src="{{dishArray.audio.src}}" poster="{{dishArray.audio.poster}}" name="{{dishArray.audio.name}}" author="{{dishArray.audio.author}}" controls loop></audio>
+          <video src="{{dishArray.videoUrl}}" binderror="videoErrorCallback" class="weui-media-box__desc"></video>
+          <audio class="weui-media-box__desc" src="{{dishArray.audioUrl}}" poster="{{dishArray.imageUrl}}" name="{{dishArray.audio.name}}" author="{{dishArray.audio.author}}" controls loop></audio>
           <view class="weui-media-box__title">{{dishArray.dishName}}</view>
           <view class="weui-media-box__desc">{{dishArray.details}}</view>
         </view>
