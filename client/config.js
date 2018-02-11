@@ -3,7 +3,7 @@
  */
 
 
-var host = 'https://www.example.cn'; //请修改为你的域名
+var host = 'https://www.leobob.cn'; //请修改为你的域名
 
 var config = {
 

@@ -10,18 +10,6 @@ Page({
       details:"hh",
       video:"http://www.w3school.com.cn//i/movie.mp4",
       audio: { src: "http://qqma.tingge123.com:823/mp3/2015-06-13/1434188181.mp3", poster:"sichuan.jpg",name:"火锅",author:"Dishf5ve"}
-      },
-      {
-      dishName: "腊肠",
-      details: "hh",
-      video:"",
-      audio: { src: "", poster: "", name: "腊肠", author: "Dishf5ve" }
-      },
-      {
-      dishName: "蛇皮怪",
-      details: "hh",
-      video:"",
-      audio: { src: "", poster: "", name: "蛇皮怪", author: "Dishf5ve" }
       }
     ],
     listName: "分类"
@@ -32,20 +20,16 @@ Page({
    */
   onLoad: function (options) {
     switch (options.dishName) {
-      case "火锅":
+      case "川菜":
         this.data.listName = "火锅";
-        this.data.dishArray = this.data.dishArray[0];
-        this.setData(this.data);
-        break;
-      case "腊肠":
-        this.data.listName = "腊肠";
-        this.data.dishArray = this.data.dishArray[1];
-        this.setData(this.data);
-        break;
-      case "蛇皮怪":
-        this.data.listName = "蛇皮怪";
-        this.data.dishArray = this.data.dishArray[2];
-        this.setData(this.data);
+        wx.request({
+          url: config.service.getDishDetails,
+          success: (res) => {
+            console.log(res.data);
+            this.data.dishArray = res.data[0];
+            this.setData(this.data);
+          }
+        })
         break;
     }
   },

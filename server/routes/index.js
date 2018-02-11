@@ -9,5 +9,6 @@ router.get('/', async (ctx, next) => {
 });
 
 router.get('/catagory', controllers.getCatagoryList);
+router.get('/dishDetails', controllers.getDishDetails);
 
 module.exports = router;
