@@ -8,7 +8,7 @@
   <view class='page__bd'>
     <view class='weui-panel__bd'>
     <view wx:if="{{listName=='菜系分类'}}">
-      <navigator wx:for="{{dishArray}}" wx:if="{{item.type=='菜系'}}" url="/pages/dish-detail/dish-detail?cataName={{item.cataName}}&from=catalist" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <navigator wx:for="{{dishArray}}" wx:if="{{item.type=='菜系'}}" url="/pages/dish-list/dish-list?cataName={{item.cataName}}&from=catalist&type=dish" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
         <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
           <image class="weui-media-box__thumb" src="{{item.imageUrl}}" />
         </view>
@@ -19,7 +19,7 @@
       </navigator>
       </view>
       <view wx:if="{{listName!='菜系分类'}}">
-      <navigator wx:for="{{dishArray}}" url="/pages/dish-detail/dish-detail?dishName={{item.dishName}}&from=dishlist" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <navigator wx:for="{{dishArray}}" url="/pages/dish-detail/dish-detail?dishName={{item.dishName}}&from=dishlist&id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
         <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
           <image class="weui-media-box__thumb" src="{{item.imageUrl}}" />
         </view>

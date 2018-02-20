@@ -26,12 +26,17 @@ Page({
   },
   onTap: function () {
     wx.navigateTo({
-      url: '/pages/dish-list/dish-list?from=index&type=catagory',
+      url: `/pages/dish-list/dish-list?from=index&type=catagory`,
     })
   },
   onCamera: function () {
     wx.chooseImage({
       success: function (res) { },
+    })
+  },
+  onConfirm: function(e) {
+    wx.navigateTo({
+      url: `/pages/dish-list/dish-list?from=index&type=search&dishName=${e.detail.value}`,
     })
   }
 })

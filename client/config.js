@@ -24,7 +24,15 @@ var config = {
     uploadUrl: `${host}/weapp/upload`,
 
     // 获取分类列表
-    getCatagoryList: `${host}/weapp/catagory`
+    getCatagoryList: `${host}/weapp/catagory`,
+
+    getDishDetails: `${host}/weapp/dishDetails`,
+
+    getDishById: `${host}/weapp/dishDetails/id/`,
+
+    getDishByCata: `${host}/weapp/dishDetails/type/`,
+
+    getDishByName: `${host}/weapp/dishDetails/name/`
   }
 };
 

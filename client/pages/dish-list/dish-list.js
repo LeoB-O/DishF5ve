@@ -36,8 +36,23 @@ Page({
         break;
       case 'dish':
         this.data.listName = options.cataName;
-        this.setData(this.data);
+        wx.request({
+          url: config.service.getDishByCata + options.cataName,
+          success: (res) => {
+            this.data.dishArray = res.data;
+            this.setData(this.data);
+          }
+        })
         break;
+      case 'search':
+        this.data.listName = '搜索结果';
+        wx.request({
+          url: config.service.getDishByName + options.dishName,
+          success: (res) => {
+            this.data.dishArray = res.data;
+            this.setData(this.data);
+          }
+        })
       
     }
   },

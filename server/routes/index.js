@@ -10,5 +10,7 @@ router.get('/', async (ctx, next) => {
 
 router.get('/catagory', controllers.getCatagoryList);
 router.get('/dishDetails', controllers.getDishDetails);
-
+router.get('/dishDetails/id/:id', controllers.getDishById);
+router.get('/dishDetails/type/:type', controllers.getDishByCata);
+router.get('/dishDetails/name/:name', controllers.getDishByName);
 module.exports = router;

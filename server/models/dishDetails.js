@@ -15,5 +15,6 @@ module.exports = sequelize.define('dishDetail', {
   updatedAt: Sequelize.BIGINT,
   version: Sequelize.BIGINT
 }, {
-    timestamps: false
+    timestamps: false,
+    tableName: "dishdetails"
   });

@@ -4,7 +4,7 @@
       <view class='weui-search-bar__form'>
         <view class='weui-search-bar__box'>
           <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-          <input type="text" class="weui-search-bar__input" placeholder="搜索菜谱、食材"></input>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索菜谱、食材" bindconfirm='onConfirm'></input>
           <image src='http://xxx.leobob.cn/image/camera.jpg' class='camera' bindtap='onCamera'></image>
         </view>
       </view>
