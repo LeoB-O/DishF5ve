@@ -13,4 +13,7 @@ router.get('/dishDetails', controllers.getDishDetails);
 router.get('/dishDetails/id/:id', controllers.getDishById);
 router.get('/dishDetails/type/:type', controllers.getDishByCata);
 router.get('/dishDetails/name/:name', controllers.getDishByName);
+
+
+router.post('/', controllers.postImage.upload.single('test'), controllers.postImage.fun);
 module.exports = router;

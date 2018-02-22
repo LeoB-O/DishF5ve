@@ -45,7 +45,7 @@ Page({
         })
         break;
       case 'search':
-        this.data.listName = '搜索结果';
+        this.data.listName = options.show;
         wx.request({
           url: config.service.getDishByName + options.dishName,
           success: (res) => {
