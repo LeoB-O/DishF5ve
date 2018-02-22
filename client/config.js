@@ -32,7 +32,10 @@ var config = {
 
     getDishByCata: `${host}/weapp/dishDetails/type/`,
 
-    getDishByName: `${host}/weapp/dishDetails/name/`
+    getDishByName: `${host}/weapp/dishDetails/name/`,
+    //获取菜品细节
+    getDishDetails: `${host}/weapp/dishDetails`
+
   }
 };
 
