@@ -1,19 +1,34 @@
 <view class='page'>
   <view class='page__hd'>
     <view class='weui-panel__hd'>
-      {{listName}}
+    <video src="http://xxx.leobob.cn/image/chongqinghuoguo.mp4" binderror="videoErrorCallback" style="width:100%"></video>>
+    <view style="text-align:center;font-size:20px;color:#000000" >家庭火锅</view>
     </view>
   </view>
   <view class='page__bd'>
-    <view class='weui-panel__bd'>
-      <navigator  class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd" style="font-size:18px">用料</view>
+      <view class="weui-panel__bd">
+      <view wx:for="{{dishArray[0].materials}}" wx:for-item="items" >
         <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-          <video src="{{dishArray.videoUrl}}" binderror="videoErrorCallback" class="weui-media-box__desc"></video>
-          <audio class="weui-media-box__desc" src="{{dishArray.audioUrl}}" poster="{{dishArray.imageUrl}}" name="{{dishArray.dishName}}" author="{{dishArray.dishName}}" controls loop></audio>
-          <view class="weui-media-box__title">{{dishArray.dishName}}</view>
-          <view class="weui-media-box__desc">{{dishArray.details}}</view>
+          <view class="weui-media-box__desc" style="font-size:16px;color:#000000;padding-left:20px;padding-top:10px">{{items.name}}</view>
+          <view style="font-size:16px;color:#000000;text-align:right;padding-right:60px;padding-top:0px">{{items.quantity}}</view>
         </view>
-      </navigator>
+      </view>
+      </view>
+    </view>
+  </view>
+  <view class='page__bd'>
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd" style="font-size:18px">做法</view>
+      <view class="weui-panel__bd">
+      <view wx:for="{{dishArray[1].ways}}" wx:for-item="items">
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <image src="{{items.src}}" style="width:100%"></image>
+          <view class="weui-media-box__desc" style="font-size:16px;color:#000000;padding-left:20px">{{items.id}}:{{items.details}}</view>
+        </view>
+      </view>
+      </view>
     </view>
   </view>
 </view>
