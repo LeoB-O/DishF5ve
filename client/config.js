@@ -36,6 +36,10 @@ var config = {
     //获取菜品细节
     getDishDetails: `${host}/weapp/dishDetails`
 
+  },
+  translation: {
+    appKey: '738ab045c2aea7a1',
+    appSecret: 'xJkhBUolAQwVxGRclcfCkbKF74kX0fCD'
   }
 };
 
