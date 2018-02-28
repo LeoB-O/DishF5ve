@@ -1,53 +1,12 @@
-<view class='page'>
-  <view class='page__hd'>
-    <view class='weui-search-bar'>
-      <view class='weui-search-bar__form'>
-        <view class='weui-search-bar__box'>
-          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-          <input type="text" class="weui-search-bar__input" placeholder="搜索菜谱、食材" bindconfirm='onConfirm'></input>
-          <image src='http://xxx.leobob.cn/image/camera.jpg' class='camera' bindtap='onCamera'></image>
-        </view>
-      </view>
-    </view>
+<page>
+  <view class='weui-search-bar'>
+    <input class='weui-search-bar__input' bindconfirm='onConfirm' bindinput='onInput' type='text' placeholder='今天吃点啥？' placeholder-class='placeholder'></input>
   </view>
-  <view class='page__bd'>
-    <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd">菜系分类</view>
-      <view class="weui-panel__bd">
-      <view wx:for="{{dishCata}}">
-        <navigator wx:if="{{item.id<3}}" url="/pages/dish-list/dish-list?from=index&type=dish&id={{item.id}}&cataName={{item.cataName}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-            <image class="weui-media-box__thumb" src="{{item.imageUrl}}" />
-          </view>
-          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-            <view class="weui-media-box__title">{{item.cataName}}</view>
-            <view class="weui-media-box__desc">{{item.cataDetail}}</view>
-          </view>
-        </navigator>
-        </view>
-      </view>
-      <view class="weui-panel__ft">
-        <view class="weui-cell weui-cell_access weui-cell_link" bindtap='onTap'>
-          <view class="weui-cell__bd">查看更多</view>
-          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-        </view>
-      </view>
-    </view>
+
+  <image class='camera' bindtap='onCamera' src='http://xxx.leobob.cn/image/camera.jpg'></image>
+
+  <view class='bottom-button'>
+    <navigator class='button__catagory' url='/pages/catagory-list/catagory-list?type=catagory'>菜谱分类</navigator>
+    <navigator class='button__favourite'>我的收藏</navigator>
   </view>
-  <view class="weui-panel weui-panel_access">
-    <view class="weui-panel__hd">时间分类</view>
-    <view class="weui-panel__bd">
-    <view wx:for="{{dishCata}}">
-      <navigator wx:if="{{item.type=='时间'}}" url="/pages/dish-list/dish-list?from=index&type=dish&id={{item.id}}&cataName={{item.cataName}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-          <image class="weui-media-box__thumb" src="{{item.imageUrl}}" />
-        </view>
-        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-          <view class="weui-media-box__title">{{item.cataName}}</view>
-          <view class="weui-media-box__desc">{{item.cataDetail}}</view>
-        </view>
-      </navigator>
-      </view>
-    </view>
-  </view>
-</view>
+</page>

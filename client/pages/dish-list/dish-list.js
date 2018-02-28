@@ -8,14 +8,7 @@ Page({
    */
   data: {
     dishNum: 10,
-    dishArray: [
-      {
-        id: 1,
-        dishName: "川菜",
-        dishDetail: "hahahahah",
-        imageUrl: ''
-      }
-    ],
+    dishArray: [],
     listName: "分类"
   },
 
@@ -25,12 +18,18 @@ Page({
   onLoad: function (options) {
     switch (options.type) {
       case 'catagory':
-        this.setData({ listName: "菜系分类" });
+        this.setData({ listName: "分类" });
         wx.request({
           url: config.service.getCatagoryList,
           success: (res) => {
             this.data.dishArray = res.data;
             this.setData(this.data);
+          },
+          fail: () => {
+            wx.showToast({
+              title: '网络错误',
+              icon: 'none'
+            })
           }
         })
         break;
@@ -41,6 +40,12 @@ Page({
           success: (res) => {
             this.data.dishArray = res.data;
             this.setData(this.data);
+          },
+          fail: () => {
+            wx.showToast({
+              title: '网络错误',
+              icon: 'none'
+            })
           }
         })
         break;
@@ -51,9 +56,15 @@ Page({
           success: (res) => {
             this.data.dishArray = res.data;
             this.setData(this.data);
+          },
+          fail: () => {
+            wx.showToast({
+              title: '网络错误',
+              icon: 'none'
+            })
           }
         })
-      
+
     }
   },
 

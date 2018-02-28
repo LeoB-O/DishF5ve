@@ -7,7 +7,8 @@ var md5 = require('./md5.js')
 Page({
   data: {
     dishCata: [
-    ]
+    ],
+    typed: false
   },
   onLoad: function () {
     wx.request({
@@ -78,9 +79,22 @@ Page({
                 wx.navigateTo({
                   url: `/pages/dish-list/dish-list?from=index&type=search&dishName=${result}&show=搜索结果:${result}`,
                 })
+              },
+              fail: () => {
+                wx.hideLoading();
+                wx.showToast({
+                  title: '网络错误',
+                  icon: 'none'
+                })
               }
             })
-
+          },
+          fail: () => {
+            wx.hideLoading();
+            wx.showToast({
+              title: '网络错误',
+              icon: 'none'
+            })
           }
         })
       },
@@ -90,5 +104,11 @@ Page({
     wx.navigateTo({
       url: `/pages/dish-list/dish-list?from=index&type=search&dishName=${e.detail.value}&show=搜索结果`,
     })
+  },
+  onInput: function(e) {
+    if(e.detail.value!=''){
+      this.data.typed = true;
+      this.setData(this.data);
+    } 
   }
 })

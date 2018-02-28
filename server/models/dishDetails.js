@@ -13,7 +13,9 @@ module.exports = sequelize.define('dishDetail', {
   type: Sequelize.STRING(50),
   createdAt: Sequelize.BIGINT,
   updatedAt: Sequelize.BIGINT,
-  version: Sequelize.BIGINT
+  version: Sequelize.BIGINT,
+  materials: Sequelize.TEXT('long'),
+  ways: Sequelize.TEXT('long')
 }, {
     timestamps: false,
     tableName: "dishdetails"

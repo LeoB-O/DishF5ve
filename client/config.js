@@ -34,7 +34,9 @@ var config = {
 
     getDishByName: `${host}/weapp/dishDetails/name/`,
     //获取菜品细节
-    getDishDetails: `${host}/weapp/dishDetails`
+    getDishDetails: `${host}/weapp/dishDetails`,
+
+    getAdvertise: `${host}/weapp/advertise`
 
   },
   translation: {

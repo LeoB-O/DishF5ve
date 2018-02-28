@@ -2,7 +2,7 @@
   <view class='page__hd'>
     <view class='weui-panel__hd'>
     <video src="http://xxx.leobob.cn/image/chongqinghuoguo.mp4" binderror="videoErrorCallback" style="width:100%"></video>>
-    <view style="text-align:center;font-size:20px;color:#000000" >家庭火锅</view>
+    <view style="text-align:center;font-size:20px;color:#000000" >{{dishArray[0].dishName}}</view>
     </view>
   </view>
   <view class='page__bd'>
@@ -22,7 +22,7 @@
     <view class="weui-panel weui-panel_access">
       <view class="weui-panel__hd" style="font-size:18px">做法</view>
       <view class="weui-panel__bd">
-      <view wx:for="{{dishArray[1].ways}}" wx:for-item="items">
+      <view wx:for="{{dishArray[0].ways}}" wx:for-item="items">
         <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
           <image src="{{items.src}}" style="width:100%"></image>
           <view class="weui-media-box__desc" style="font-size:16px;color:#000000;padding-left:20px">{{items.id}}:{{items.details}}</view>

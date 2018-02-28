@@ -1,0 +1,25 @@
+<!--pages/catagory-list/catagory-list.wxml-->
+<page>
+  <view wx:for='{{cataArray}}' wx:for-item='item_1'>
+    <view class='weui-panel__hd'>{{item_1.type}}</view>
+    <view class='catagory_items'>
+      <view wx:for='{{item_1.detailArray}}' wx:for-item='item_2' class='catagory_items__inner'>
+        <navigator url='/pages/dish-list/dish-list?cataName={{item_2.cataName}}&from=catalist&type=dish' hover-class='none'>
+          <view class='catagory_item'>
+            <image src='{{item_2.imageUrl}}' class='cataImage'></image>
+            <text class='cataName'>{{item_2.cataName}}</text>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class='advertise'>
+    <swiper indicator-dots='true' autoplay='true'>
+      <block wx:for='{{imageUrls}}'>
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="355" height="150" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</page>

@@ -5,7 +5,9 @@ const config = require('./config');
 
 
 const app = new Koa();
-app.use(bodyParser());
+app.use(bodyParser({
+  enableTypes:['json', 'form', 'text']
+}));
 
 app.use(async (ctx, next) => {
     console.log(`Process ${ctx.request.method} ${ctx.request.url}...`);
