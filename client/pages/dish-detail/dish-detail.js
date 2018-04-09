@@ -108,6 +108,11 @@ Page({
                 data: {
                   openid: this.data.userInfo["openid"],
                   dishId: this.data.dishId
+                },
+                success: () => {
+                  wx.showToast({
+                    title: '收藏成功！'
+                  });
                 }
               });
             }
