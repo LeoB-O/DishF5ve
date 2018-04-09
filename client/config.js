@@ -36,7 +36,9 @@ var config = {
     //获取菜品细节
     getDishDetails: `${host}/weapp/dishDetails`,
 
-    getAdvertise: `${host}/weapp/advertise`
+    getAdvertise: `${host}/weapp/advertise`,
+
+    getFavourite: `${host}/weapp/favourite`
 
   },
   translation: {

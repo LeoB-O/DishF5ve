@@ -1,11 +1,15 @@
 // pages/favourite.js
+var config = require('../../config.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: {}
+    userInfo: {},
+    favourite: [],
+    dishList: []
   },
 
   /**
@@ -16,13 +20,32 @@ Page({
       success: (res) => {
         if (res.code) {
           wx.request({
-            url: 'https://www.leobob.cn/weapp/login',
+            url: config.service.loginUrl,
             data: {
               code: res.code
             },
             success: (res) => {
               this.data.userInfo = res.data;
               this.setData(this.data);
+              wx.request({
+                url: config.service.getFavourite,
+                data: {
+                  openid: userInfo["openid"]
+                },
+                success: (res) => {
+                  this.data.favourite = res.data;
+                  this.setData(this.data);
+                  for(let f of favourite) {
+                    wx.request({
+                      url: config.service.getDishById + f,
+                      success: (res) => {
+                        this.data.dishList.concat(res.data);
+                        this.setData(this.data);
+                      }
+                    })
+                  }
+                }
+              })
             }
           })
         }
