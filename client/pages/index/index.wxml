@@ -7,6 +7,6 @@
 
   <view class='bottom-button'>
     <navigator class='button__catagory' url='/pages/catagory-list/catagory-list?type=catagory'>菜谱分类</navigator>
-    <navigator class='button__favourite'>我的收藏</navigator>
+    <navigator class='button__favourite' url='/pages/favourite/favourite'>我的收藏</navigator>
   </view>
 </page>

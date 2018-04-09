@@ -3,7 +3,7 @@ const sequelize = require('../config').sequelize;
 
 module.exports = sequelize.define('dishDetail', {
   id: {
-    type: Sequelize.STRING(50),
+    type: Sequelize.INTEGER(11),
     primaryKey: true
   },
   dishName: Sequelize.STRING(100),

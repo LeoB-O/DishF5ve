@@ -41,7 +41,7 @@ var config = {
   },
   translation: {
     appKey: '738ab045c2aea7a1',
-    appSecret: 'xJkhBUolAQwVxGRclcfCkbKF74kX0fCD'
+    appSecret: '8e6fe69bcaf0240aff63ecba368ba0dc'
   }
 };
 

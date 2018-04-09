@@ -8,16 +8,22 @@ var mysql = {
   port: 3306 // 端口号，MySQL默认3306
 };
 
+var weapp = {
+  appid: 'wxd0f7f4499329bc53',
+  appKey: '738ab045c2aea7a1',
+  appSecret: '8e6fe69bcaf0240aff63ecba368ba0dc'
+};
+
 
 var sequelize = new Sequelize(mysql.database, mysql.username, mysql.password, {
-    host: mysql.host,
-    dialect: 'mysql',
-    pool: {
-        max: 5,
-        min: 0,
-        idle: 30000
-    }
+  host: mysql.host,
+  dialect: 'mysql',
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 30000
+  }
 });
 
 
-module.exports = { mysql, sequelize };
+module.exports = { mysql, sequelize, weapp };

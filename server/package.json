@@ -23,6 +23,7 @@
         "nunjucks": "2.4.3",
         "sequelize": "3.24.1",
         "mysql": "2.11.1",
-        "koa-multer": "1.0.2"
+        "koa-multer": "1.0.2",
+        "request": "2.85.0"
     }
 }

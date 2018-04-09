@@ -46,6 +46,7 @@
 
 page {
   height: 100%;
+  position: fixed;
 }
 
 .button__catagory {

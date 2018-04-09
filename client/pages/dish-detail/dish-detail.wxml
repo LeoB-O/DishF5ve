@@ -31,4 +31,5 @@
       </view>
     </view>
   </view>
+  <button class='favourite'>添加收藏</button>
 </view>

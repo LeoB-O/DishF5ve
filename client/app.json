@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/dish-list/dish-list",
     "pages/dish-detail/dish-detail",
-    "pages/catagory-list/catagory-list"
+    "pages/catagory-list/catagory-list",
+    "pages/favourite/favourite"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
