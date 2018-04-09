@@ -19,7 +19,7 @@
         </navigator>
       </view>
       <view wx:if="{{listName!='菜系分类'}}">
-        <navigator wx:for="{{dishArray}}" url="/pages/dish-detail/dish-detail?dishName={{item.dishName}}&from=dishlist&id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+        <navigator wx:for="{{dishList}}" url="/pages/dish-detail/dish-detail?dishName={{item.dishName}}&from=dishlist&id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
           <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
             <image class="weui-media-box__thumb" src="{{item.imageUrl}}" />
           </view>

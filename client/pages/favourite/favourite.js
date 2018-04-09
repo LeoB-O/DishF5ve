@@ -9,7 +9,8 @@ Page({
   data: {
     userInfo: {},
     favourite: [],
-    dishList: []
+    dishList: [],
+    listName: "我的收藏"
   },
 
   /**
@@ -30,16 +31,17 @@ Page({
               wx.request({
                 url: config.service.getFavourite,
                 data: {
-                  openid: userInfo["openid"]
+                  openid: this.data.userInfo["openid"]
                 },
                 success: (res) => {
                   this.data.favourite = res.data;
                   this.setData(this.data);
-                  for(let f of favourite) {
+                  for(let f of this.data.favourite) {
+                    console.log(config.service.getDishById + f);
                     wx.request({
                       url: config.service.getDishById + f,
                       success: (res) => {
-                        this.data.dishList.concat(res.data);
+                        this.data.dishList.push(res.data[0]);
                         this.setData(this.data);
                       }
                     })
