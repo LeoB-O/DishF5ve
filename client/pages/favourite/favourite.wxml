@@ -2,7 +2,7 @@
 <view class='page'>
   <view class='page__hd'>
     <view class='weui-panel__hd'>
-      我的收藏{{ userInfo['openid'] }}
+      我的收藏
     </view>
   </view>
   <view class='page__bd'>
@@ -30,5 +30,10 @@
         </navigator>
       </view>
     </view>
+  </view>
+  <view class='util-bottom'></view>
+  <view class='bottom-button'>
+    <navigator class='button__catagory' url='/pages/catagory-list/catagory-list?type=catagory'>菜谱分类</navigator>
+    <navigator class='button__favourite'>我的收藏</navigator>
   </view>
 </view>
